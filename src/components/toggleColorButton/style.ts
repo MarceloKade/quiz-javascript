@@ -1,5 +1,4 @@
-import { styled } from "styled-components";
-
+import { styled, createGlobalStyle  } from "styled-components";
 export const ContainerButton = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,4 +18,12 @@ export const Button = styled.button`
   height: 38px;
   background-color: black;
   border-radius: 30px;
+  cursor: pointer;
+`;
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${(props) => props.theme.backgroundColor};
+    transition: background-color 500ms;
+  }
 `;

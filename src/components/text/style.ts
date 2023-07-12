@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const Text = styled.p`
   font-size: 80px;
-  color: white;
+  transition: color 500ms;
 `;
 
 export const TextQuiz = styled.p`
