@@ -85,6 +85,11 @@ body {
   overflow-x: hidden;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

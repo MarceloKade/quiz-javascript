@@ -1,8 +1,17 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
+import Container from '@/components/Container';
+import ToggleColorButton from '@/components/toggleColorButton/ToggleColorButton';
 
 export default function Home() {
   return (
-    <h1>Quiz JavaScript</h1>
-  )
+    <>
+      <header>
+        <ToggleColorButton />
+
+      </header>
+      <main>
+        <Container />
+      </main>
+    </>
+  );
 }
