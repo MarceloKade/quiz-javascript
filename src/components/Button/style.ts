@@ -18,6 +18,7 @@ export const ContainerButtonBasic = styled.div`
   background-color: #FF9800;
   border-radius: 100px;
   margin-bottom: 47px;
+  cursor: pointer;
 `;
 
 export const ContainerButtonIntermediary = styled.div`
@@ -30,6 +31,7 @@ export const ContainerButtonIntermediary = styled.div`
   background-color: #2196F3;
   border-radius: 100px;
   margin-bottom: 47px;
+  cursor: pointer;
 `;
 
 export const ContainerButtonAdvanced = styled.div`
@@ -41,4 +43,5 @@ export const ContainerButtonAdvanced = styled.div`
   height: 146.67px;
   background-color: #FF1744;
   border-radius: 100px;
+  cursor: pointer;
 `;
