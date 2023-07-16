@@ -19,6 +19,13 @@ export const ContainerButtonBasic = styled.div`
   border-radius: 100px;
   margin-bottom: 47px;
   cursor: pointer;
+
+  &:hover {
+    background-color: #FFB74D;
+  }
+  &:active {
+    background-color: #D87F33;
+  }
 `;
 
 export const ContainerButtonIntermediary = styled.div`
@@ -32,6 +39,13 @@ export const ContainerButtonIntermediary = styled.div`
   border-radius: 100px;
   margin-bottom: 47px;
   cursor: pointer;
+
+    &:hover {
+    background-color: #64B5F6;
+  }
+  &:active {
+    background-color: #1369C3;
+  }
 `;
 
 export const ContainerButtonAdvanced = styled.div`
@@ -44,4 +58,11 @@ export const ContainerButtonAdvanced = styled.div`
   background-color: #FF1744;
   border-radius: 100px;
   cursor: pointer;
+
+  &:hover {
+    background-color: #FF5C8D;
+  }
+  &:active {
+    background-color: #D33658;
+  }
 `;
