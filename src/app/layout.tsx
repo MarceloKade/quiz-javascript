@@ -1,6 +1,9 @@
+'use client'
+import { ToggleColorProvider } from '@/hooks/context/useToggleColor'
 import StyledComponentsRegistry from '../../registry'
 import './globals.css'
 import { Roboto } from 'next/font/google'
+import ToggleColorButton from '@/components/toggleColorButton/ToggleColorButton'
 
 const roboto = Roboto({ subsets: ['latin'], weight: "400", variable: '--font-roboto' })
 
@@ -17,7 +20,14 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={`${roboto.className} font-sans`}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <ToggleColorProvider>
+            <header>
+              <ToggleColorButton />
+            </header>
+            {children}
+          </ToggleColorProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   )
