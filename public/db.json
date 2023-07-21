@@ -1,340 +1,339 @@
 {
-    "basic": [
-      {
-        "id": 1,
-        "question": "Qual palavra-chave é utilizada para declarar uma variável no JavaScript? \n Assinale a alternativa incorreta",
-        "option": {
-          "a": "var",
-          "b": "const",
-          "c": "let",
-          "d": "int"
-        },
-        "correct": "d"
+  "basic": [
+    {
+      "id": 1,
+      "question": "Qual palavra-chave é utilizada para declarar uma variável no JavaScript? \n Assinale a alternativa incorreta",
+      "option": {
+        "a": "var",
+        "b": "const",
+        "c": "let",
+        "d": "int"
       },
-      {
-        "id": 2,
-        "question": "Qual dos seguintes métodos é usado para exibir uma mensagem de alerta no navegador?",
-        "option": {
-          "a": "console.log()",
-          "b": "prompt()",
-          "c": "confirm()",
-          "d": "alert()"
-        },
-        "correct": "d"
+      "correct": "d"
+    },
+    {
+      "id": 2,
+      "question": "Qual dos seguintes métodos é usado para exibir uma mensagem de alerta no navegador?",
+      "option": {
+        "a": "console.log()",
+        "b": "prompt()",
+        "c": "confirm()",
+        "d": "alert()"
       },
-      {
-        "id": 3,
-        "question": "Como se referencia um elemento HTML usando JavaScript?",
-        "option": {
-          "a": "#elemento",
-          "b": ".elemento",
-          "c": "document.elemento",
-          "d": "document.querySelector(\"#elemento\")"
-        },
-        "correct": "d"
+      "correct": "d"
+    },
+    {
+      "id": 3,
+      "question": "Como se referencia um elemento HTML usando JavaScript?",
+      "option": {
+        "a": "#elemento",
+        "b": ".elemento",
+        "c": "document.elemento",
+        "d": "document.querySelector(\"#elemento\")"
       },
-      {
-        "id": 4,
-        "question": "Qual operador lógico é usado para verificar igualdade estrita (valor e tipo) em JavaScript?",
-        "option": {
-          "a": "==",
-          "b": "!=",
-          "c": "===",
-          "d": "!=="
-        },
-        "correct": "c"
+      "correct": "d"
+    },
+    {
+      "id": 4,
+      "question": "Qual operador lógico é usado para verificar igualdade estrita (valor e tipo) em JavaScript?",
+      "option": {
+        "a": "==",
+        "b": "!=",
+        "c": "===",
+        "d": "!=="
       },
-      {
-        "id": 5,
-        "question": "O que o método `parseInt()` faz em JavaScript?",
-        "option": {
-          "a": "Converte um valor para inteiro.",
-          "b": "Arredonda um número para o inteiro mais próximo.",
-          "c": "Converte um valor para string.",
-          "d": "Retorna um valor booleano."
-        },
-        "correct": "a"
+      "correct": "c"
+    },
+    {
+      "id": 5,
+      "question": "O que o método `parseInt()` faz em JavaScript?",
+      "option": {
+        "a": "Converte um valor para inteiro.",
+        "b": "Arredonda um número para o inteiro mais próximo.",
+        "c": "Converte um valor para string.",
+        "d": "Retorna um valor booleano."
       },
-      {
-        "id": 6,
-        "question": "Qual dos seguintes valores é considerado \"falsy\" em JavaScript?",
-        "option": {
-          "a": "0",
-          "b": "\"false\"",
-          "c": "undefined",
-          "d": "todos os anteriores",
-          "e": "nenhum dos anteriores"
-        },
-        "correct": "d"
+      "correct": "a"
+    },
+    {
+      "id": 6,
+      "question": "Qual dos seguintes valores é considerado \"falsy\" em JavaScript?",
+      "option": {
+        "a": "0",
+        "b": "\"false\"",
+        "c": "undefined",
+        "d": "todos os anteriores",
+        "e": "nenhum dos anteriores"
       },
-      {
-        "id": 7,
-        "question": "O que o seguinte código irá imprimir no console?\n\nvar x = 5;\nconsole.log(x + \"5\");",
-        "option": {
-          "a": "10",
-          "b": "\"55\"",
-          "c": "5",
-          "d": "\"5\""
-        },
-        "correct": "b"
+      "correct": "d"
+    },
+    {
+      "id": 7,
+      "question": "O que o seguinte código irá imprimir no console?\n\nvar x = 5;\nconsole.log(x + \"5\");",
+      "option": {
+        "a": "10",
+        "b": "\"55\"",
+        "c": "5",
+        "d": "\"5\""
       },
-      {
-        "id": 8,
-        "question": "Como se pode comentar uma linha de código em JavaScript?",
-        "option": {
-          "a": "// comentário",
-          "b": "<!-- comentário -->",
-          "c": "/* comentário */",
-          "d": "#comentário"
-        },
-        "correct": "a"
+      "correct": "b"
+    },
+    {
+      "id": 8,
+      "question": "Como se pode comentar uma linha de código em JavaScript?",
+      "option": {
+        "a": "// comentário",
+        "b": "<!-- comentário -->",
+        "c": "/* comentário */",
+        "d": "#comentário"
       },
-      {
-        "id": 9,
-        "question": "Qual método é usado para adicionar um elemento no final de um array em JavaScript?",
-        "option": {
-          "a": "array.push()",
-          "b": "array.pop()",
-          "c": "array.unshift()",
-          "d": "array.shift()"
-        },
-        "correct": "a"
+      "correct": "a"
+    },
+    {
+      "id": 9,
+      "question": "Qual método é usado para adicionar um elemento no final de um array em JavaScript?",
+      "option": {
+        "a": "array.push()",
+        "b": "array.pop()",
+        "c": "array.unshift()",
+        "d": "array.shift()"
       },
-      {
-        "id": 10,
-        "question": "O que o seguinte código irá imprimir no console?\n\nvar a = 10;\nconsole.log(a + \"10\");",
-        "option": {
-          "a": "\"1010\"",
-          "b": "20",
-          "c": "\"20\"",
-          "d": "1010"
-        },
-        "correct": "a"
-      }
-    ],
-    "intermediary": [
-      {
-        "id": 1,
-        "question": "Qual é a diferença entre as palavras-chave `let` e `var` na declaração de variáveis?",
-        "option": {
-          "a": "`let` é usada para variáveis globais, enquanto `var` é usada para variáveis locais.",
-          "b": "`let` é a forma antiga de declarar variáveis em JavaScript, e `var` é a forma mais moderna.",
-          "c": "`let` tem escopo de bloco, enquanto `var` tem escopo de função.",
-          "d": "Não há diferença, ambas podem ser usadas de forma intercambiável."
-        },
-        "correct": "c"
+      "correct": "a"
+    },
+    {
+      "id": 10,
+      "question": "O que o seguinte código irá imprimir no console?\n\nvar a = 10;\nconsole.log(a + \"10\");",
+      "option": {
+        "a": "\"1010\"",
+        "b": "20",
+        "c": "\"20\"",
+        "d": "1010"
       },
-      {
-        "id": 2,
-        "question": "O que o operador spread (`...`) faz em JavaScript?",
-        "option": {
-          "a": "Concatena duas strings.",
-          "b": "Copia um objeto para outro.",
-          "c": "Permite a passagem de argumentos indefinidos para uma função.",
-          "d": "Divide um array em vários elementos individuais."
-        },
-        "correct": "b"
+      "correct": "a"
+    }
+  ],
+  "intermediary": [
+    {
+      "id": 1,
+      "question": "Qual é a diferença entre as palavras-chave `let` e `var` na declaração de variáveis?",
+      "option": {
+        "a": "`let` é usada para variáveis globais, enquanto `var` é usada para variáveis locais.",
+        "b": "`let` é a forma antiga de declarar variáveis em JavaScript, e `var` é a forma mais moderna.",
+        "c": "`let` tem escopo de bloco, enquanto `var` tem escopo de função.",
+        "d": "Não há diferença, ambas podem ser usadas de forma intercambiável."
       },
-      {
-        "id": 3,
-        "question": "Qual método é usado para remover o último elemento de um array em JavaScript?",
-        "option": {
-          "a": "array.push()",
-          "b": "array.pop()",
-          "c": "array.unshift()",
-          "d": "array.shift()"
-        },
-        "correct": "b"
+      "correct": "c"
+    },
+    {
+      "id": 2,
+      "question": "O que o operador spread (`...`) faz em JavaScript?",
+      "option": {
+        "a": "Concatena duas strings.",
+        "b": "Copia um objeto para outro.",
+        "c": "Permite a passagem de argumentos indefinidos para uma função.",
+        "d": "Divide um array em vários elementos individuais."
       },
-      {
-        "id": 4,
-        "question": "O que é \"hoisting\" em JavaScript?",
-        "option": {
-          "a": "A prática de elevar um elemento HTML na árvore do DOM.",
-          "b": "Um mecanismo que move declarações de variáveis para o topo do escopo.",
-          "c": "O ato de reorganizar a ordem dos elementos em um array.",
-          "d": "Uma técnica para criar animações suaves em páginas da web."
-        },
-        "correct": "b"
+      "correct": "b"
+    },
+    {
+      "id": 3,
+      "question": "Qual método é usado para remover o último elemento de um array em JavaScript?",
+      "option": {
+        "a": "array.push()",
+        "b": "array.pop()",
+        "c": "array.unshift()",
+        "d": "array.shift()"
       },
-      {
-        "id": 5,
-        "question": "O que é uma \"closure\" (fechamento) em JavaScript?",
-        "option": {
-          "a": "Um erro que ocorre quando o código não está de acordo com os padrões de codificação.",
-          "b": "Um objeto especial usado para criar animações complexas.",
-          "c": "Um design pattern usado para criar objetos a partir de classes.",
-          "d": "Uma função que captura variáveis de seu escopo externo, mesmo após a função externa ter sido executada."
-        },
-        "correct": "d"
+      "correct": "b"
+    },
+    {
+      "id": 4,
+      "question": "O que é \"hoisting\" em JavaScript?",
+      "option": {
+        "a": "A prática de elevar um elemento HTML na árvore do DOM.",
+        "b": "Um mecanismo que move declarações de variáveis para o topo do escopo.",
+        "c": "O ato de reorganizar a ordem dos elementos em um array.",
+        "d": "Uma técnica para criar animações suaves em páginas da web."
       },
-      {
-        "id": 6,
-        "question": "Qual é a saída do seguinte código?\n\nfor (var i = 0; i < 5; i++) {\n  setTimeout(function () {\n    console.log(i);\n  }, 100);\n}",
-        "option": {
-          "a": "0 1 2 3 4",
-          "b": "5 5 5 5 5",
-          "c": "1 2 3 4 5",
-          "d": "4 4 4 4 4"
-        },
-        "correct": "b"
+      "correct": "b"
+    },
+    {
+      "id": 5,
+      "question": "O que é uma \"closure\" (fechamento) em JavaScript?",
+      "option": {
+        "a": "Um erro que ocorre quando o código não está de acordo com os padrões de codificação.",
+        "b": "Um objeto especial usado para criar animações complexas.",
+        "c": "Um design pattern usado para criar objetos a partir de classes.",
+        "d": "Uma função que captura variáveis de seu escopo externo, mesmo após a função externa ter sido executada."
       },
-      {
-        "id": 7,
-        "question": "Qual é o resultado da expressão em JavaScript: 10 % 3?",
-        "option": {
-          "a": "3",
-          "b": "1",
-          "c": "3.33",
-          "d": "0.1"
-        },
-        "correct": "b"
+      "correct": "d"
+    },
+    {
+      "id": 6,
+      "question": "Qual é a saída do seguinte código?\n\nfor (var i = 0; i < 5; i++) {\n  setTimeout(function () {\n    console.log(i);\n  }, 100);\n}",
+      "option": {
+        "a": "0 1 2 3 4",
+        "b": "5 5 5 5 5",
+        "c": "1 2 3 4 5",
+        "d": "4 4 4 4 4"
       },
-      {
-        "id": 8,
-        "question": "Qual das seguintes opções é uma forma válida de criar um array em JavaScript?",
-        "option": {
-          "a": "var arr = [1, 2, 3;]",
-          "b": "var arr = (1, 2, 3)",
-          "c": "var arr = {1, 2, 3}",
-          "d": "var arr = [1, 2, 3]"
-        },
-        "correct": "d"
+      "correct": "b"
+    },
+    {
+      "id": 7,
+      "question": "Qual é o resultado da expressão em JavaScript: 10 % 3?",
+      "option": {
+        "a": "3",
+        "b": "1",
+        "c": "3.33",
+        "d": "0.1"
       },
-      {
-        "id": 9,
-        "question": "Qual dos seguintes métodos é usado para remover um elemento específico de um array em JavaScript?",
-        "option": {
-          "a": "array.remove(index)",
-          "b": "array.splice(index, 1)",
-          "c": "array.pop(index)",
-          "d": "array.slice(index, 1)"
-        },
-        "correct": "b"
+      "correct": "b"
+    },
+    {
+      "id": 8,
+      "question": "Qual das seguintes opções é uma forma válida de criar um array em JavaScript?",
+      "option": {
+        "a": "var arr = [1, 2, 3;]",
+        "b": "var arr = (1, 2, 3)",
+        "c": "var arr = {1, 2, 3}",
+        "d": "var arr = [1, 2, 3]"
       },
-      {
-        "id": 10,
-        "question": "Qual é o objetivo do JSON.stringify() em JavaScript?",
-        "option": {
-          "a": "Analisar um objeto JSON e retornar um objeto JavaScript.",
-          "b": "Converter um objeto JavaScript em uma string JSON.",
-          "c": "Criar um novo objeto JavaScript a partir de um objeto JSON.",
-          "d": "Verificar se uma string é um objeto JSON válido."
-        },
-        "correct": "b"
-      }
-    ],
-    "advanced": [
-      {
-        "id": 1,
-        "question": "O que é uma Promise em JavaScript?",
-        "option": {
-          "a": "Um tipo de dado que representa um valor que pode estar disponível agora, no futuro ou nunca.",
-          "b": "Uma função que é chamada após a conclusão de uma operação assíncrona.",
-          "c": "Uma estrutura de dados usada para armazenar coleções de elementos.",
-          "d": "Uma palavra-chave usada para declarar uma variável constante."
-        },
-        "correct": "a"
+      "correct": "d"
+    },
+    {
+      "id": 9,
+      "question": "Qual dos seguintes métodos é usado para remover um elemento específico de um array em JavaScript?",
+      "option": {
+        "a": "array.remove(index)",
+        "b": "array.splice(index, 1)",
+        "c": "array.pop(index)",
+        "d": "array.slice(index, 1)"
       },
-      {
-        "id": 2,
-        "question": "Qual método é usado para copiar as propriedades enumeráveis de um objeto para outro em JavaScript?",
-        "option": {
-          "a": "Object.extend()",
-          "b": "Object.assign()",
-          "c": "Object.copy()",
-          "d": "Object.merge()"
-        },
-        "correct": "b"
+      "correct": "b"
+    },
+    {
+      "id": 10,
+      "question": "Qual é o objetivo do JSON.stringify() em JavaScript?",
+      "option": {
+        "a": "Analisar um objeto JSON e retornar um objeto JavaScript.",
+        "b": "Converter um objeto JavaScript em uma string JSON.",
+        "c": "Criar um novo objeto JavaScript a partir de um objeto JSON.",
+        "d": "Verificar se uma string é um objeto JSON válido."
       },
-      {
-        "id": 3,
-        "question": "O que é o Event Bubbling (Bolha de Eventos) em JavaScript?",
-        "option": {
-          "a": "Um mecanismo que permite que um evento seja capturado e tratado apenas uma vez.",
-          "b": "O processo pelo qual um evento é propagado do elemento filho para o elemento pai até alcançar a raiz do documento.",
-          "c": "A prática de criar eventos personalizados usando a classe Event.",
-          "d": "Um tipo de evento que ocorre quando o usuário clica em um elemento HTML."
-        },
-        "correct": "b"
+      "correct": "b"
+    }
+  ],
+  "advanced": [
+    {
+      "id": 1,
+      "question": "O que é uma Promise em JavaScript?",
+      "option": {
+        "a": "Um tipo de dado que representa um valor que pode estar disponível agora, no futuro ou nunca.",
+        "b": "Uma função que é chamada após a conclusão de uma operação assíncrona.",
+        "c": "Uma estrutura de dados usada para armazenar coleções de elementos.",
+        "d": "Uma palavra-chave usada para declarar uma variável constante."
       },
-      {
-        "id": 4,
-        "question": "Qual é a diferença entre `null` e `undefined` em JavaScript?",
-        "option": {
-          "a": "Não há diferença; ambos representam a ausência de valor.",
-          "b": "`null` é usado para indicar a ausência de valor intencionalmente, enquanto `undefined` é usado para indicar a ausência de valor não intencionalmente.",
-          "c": "`null` é retornado quando uma função não possui uma declaração de retorno, enquanto `undefined` é usado para declarar uma variável sem valor.",
-          "d": "`null` é uma palavra-chave reservada, enquanto `undefined` é um objeto global em JavaScript."
-        },
-        "correct": "b"
+      "correct": "a"
+    },
+    {
+      "id": 2,
+      "question": "Qual método é usado para copiar as propriedades enumeráveis de um objeto para outro em JavaScript?",
+      "option": {
+        "a": "Object.extend()",
+        "b": "Object.assign()",
+        "c": "Object.copy()",
+        "d": "Object.merge()"
       },
-      {
-        "id": 5,
-        "question": "Qual é o método utilizado para encadear múltiplas Promise em JavaScript?",
-        "option": {
-          "a": "Promise.all()",
-          "b": "Promise.every()",
-          "c": "Promise.chain()",
-          "d": "Promise.then()"
-        },
-        "correct": "d"
+      "correct": "b"
+    },
+    {
+      "id": 3,
+      "question": "O que é o Event Bubbling (Bolha de Eventos) em JavaScript?",
+      "option": {
+        "a": "Um mecanismo que permite que um evento seja capturado e tratado apenas uma vez.",
+        "b": "O processo pelo qual um evento é propagado do elemento filho para o elemento pai até alcançar a raiz do documento.",
+        "c": "A prática de criar eventos personalizados usando a classe Event.",
+        "d": "Um tipo de evento que ocorre quando o usuário clica em um elemento HTML."
       },
-      {
-        "id": 6,
-        "question": "Qual método é usado para copiar as propriedades enumeráveis de um objeto para outro em JavaScript?",
-        "option": {
-          "a": "Object.extend()",
-          "b": "Object.assign()",
-          "c": "Object.copy()",
-          "d": "Object.merge()"
-        },
-        "correct": "b"
+      "correct": "b"
+    },
+    {
+      "id": 4,
+      "question": "Qual é a diferença entre `null` e `undefined` em JavaScript?",
+      "option": {
+        "a": "Não há diferença; ambos representam a ausência de valor.",
+        "b": "`null` é usado para indicar a ausência de valor intencionalmente, enquanto `undefined` é usado para indicar a ausência de valor não intencionalmente.",
+        "c": "`null` é retornado quando uma função não possui uma declaração de retorno, enquanto `undefined` é usado para declarar uma variável sem valor.",
+        "d": "`null` é uma palavra-chave reservada, enquanto `undefined` é um objeto global em JavaScript."
       },
-      {
-        "id": 7,
-        "question": "O que é o Event Bubbling (Bolha de Eventos) em JavaScript?",
-        "option": {
-          "a": "Um mecanismo que permite que um evento seja capturado e tratado apenas uma vez.",
-          "b": "O processo pelo qual um evento é propagado do elemento filho para o elemento pai até alcançar a raiz do documento.",
-          "c": "A prática de criar eventos personalizados usando a classe Event.",
-          "d": "Um tipo de evento que ocorre quando o usuário clica em um elemento HTML."
-        },
-        "correct": "b"
+      "correct": "b"
+    },
+    {
+      "id": 5,
+      "question": "Qual é o método utilizado para encadear múltiplas Promise em JavaScript?",
+      "option": {
+        "a": "Promise.all()",
+        "b": "Promise.every()",
+        "c": "Promise.chain()",
+        "d": "Promise.then()"
       },
-      {
-        "id": 8,
-        "question": "Qual é a diferença entre null e undefined em JavaScript?",
-        "option": {
-          "a": "Não há diferença; ambos representam a ausência de valor.",
-          "b": "null é usado para indicar a ausência de valor intencionalmente, enquanto undefined é usado para indicar a ausência de valor não intencionalmente.",
-          "c": "null é retornado quando uma função não possui uma declaração de retorno, enquanto undefined é usado para declarar uma variável sem valor.",
-          "d": "null é uma palavra-chave reservada, enquanto undefined é um objeto global em JavaScript."
-        },
-        "correct": "b"
+      "correct": "d"
+    },
+    {
+      "id": 6,
+      "question": "Qual método é usado para copiar as propriedades enumeráveis de um objeto para outro em JavaScript?",
+      "option": {
+        "a": "Object.extend()",
+        "b": "Object.assign()",
+        "c": "Object.copy()",
+        "d": "Object.merge()"
       },
-      {
-        "id": 9,
-        "question": "Qual é o método utilizado para encadear múltiplas Promise em JavaScript?",
-        "option": {
-          "a": "Promise.all()",
-          "b": "Promise.every()",
-          "c": "Promise.chain()",
-          "d": "Promise.then()"
-        },
-        "correct": "d"
+      "correct": "b"
+    },
+    {
+      "id": 7,
+      "question": "O que é o Event Bubbling (Bolha de Eventos) em JavaScript?",
+      "option": {
+        "a": "Um mecanismo que permite que um evento seja capturado e tratado apenas uma vez.",
+        "b": "O processo pelo qual um evento é propagado do elemento filho para o elemento pai até alcançar a raiz do documento.",
+        "c": "A prática de criar eventos personalizados usando a classe Event.",
+        "d": "Um tipo de evento que ocorre quando o usuário clica em um elemento HTML."
       },
-      {
-        "id": 10,
-        "question": "O que é uma Closure em JavaScript?",
-        "option": {
-          "a": "Uma estrutura de controle que permite que o código salte para uma determinada linha.",
-          "b": "Um objeto especial usado para criar animações complexas.",
-          "c": "Uma função que captura variáveis de seu escopo externo, mesmo após a função externa ter sido executada.",
-          "d": "Um mecanismo que permite a reutilização de código através da criação de classes e objetos."
-        },
-        "correct": "c"
-      }
-    ]
-  }
-  
+      "correct": "b"
+    },
+    {
+      "id": 8,
+      "question": "Qual é a diferença entre null e undefined em JavaScript?",
+      "option": {
+        "a": "Não há diferença; ambos representam a ausência de valor.",
+        "b": "null é usado para indicar a ausência de valor intencionalmente, enquanto undefined é usado para indicar a ausência de valor não intencionalmente.",
+        "c": "null é retornado quando uma função não possui uma declaração de retorno, enquanto undefined é usado para declarar uma variável sem valor.",
+        "d": "null é uma palavra-chave reservada, enquanto undefined é um objeto global em JavaScript."
+      },
+      "correct": "b"
+    },
+    {
+      "id": 9,
+      "question": "Qual é o método utilizado para encadear múltiplas Promise em JavaScript?",
+      "option": {
+        "a": "Promise.all()",
+        "b": "Promise.every()",
+        "c": "Promise.chain()",
+        "d": "Promise.then()"
+      },
+      "correct": "d"
+    },
+    {
+      "id": 10,
+      "question": "O que é uma Closure em JavaScript?",
+      "option": {
+        "a": "Uma estrutura de controle que permite que o código salte para uma determinada linha.",
+        "b": "Um objeto especial usado para criar animações complexas.",
+        "c": "Uma função que captura variáveis de seu escopo externo, mesmo após a função externa ter sido executada.",
+        "d": "Um mecanismo que permite a reutilização de código através da criação de classes e objetos."
+      },
+      "correct": "c"
+    }
+  ]
+}
