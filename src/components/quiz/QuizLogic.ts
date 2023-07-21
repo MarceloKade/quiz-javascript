@@ -2,6 +2,7 @@ import { Category, QuizData, Question } from "@/service/api/type";
 import { useEffect, useState } from "react";
 import { fetchQuizData } from "@/service/api/api";
 import { QuizProps } from "./type";
+import { useToggleColor } from "@/hooks/context/useToggleColor";
 
 export const useQuizLogic = ({ params }: QuizProps) => {
   const { category } = params;
@@ -12,6 +13,7 @@ export const useQuizLogic = ({ params }: QuizProps) => {
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [isWrong, setIsWrong] = useState<boolean | null>(null);
   const [answered, setAnswered] = useState<boolean>(false);
+  const [hoverDisabled, setHoverDisabled] = useState<boolean>(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -41,6 +43,7 @@ export const useQuizLogic = ({ params }: QuizProps) => {
 
   const handleOptionClick = (selectedOption: string, correctOption: string) => {
     if (!answered) {
+      setHoverDisabled(true);
       if (selectedOption === correctOption) {
         setIsCorrect(true);
       } else {
@@ -48,6 +51,11 @@ export const useQuizLogic = ({ params }: QuizProps) => {
       }
       setAnswered(true);
     }
+  };
+
+  const { theme } = useToggleColor();
+  const textStyle = {
+    color: theme.backgroundColor === "white" ? "black" : "white",
   };
 
   return {
@@ -58,5 +66,7 @@ export const useQuizLogic = ({ params }: QuizProps) => {
     answered,
     handleNextQuestion,
     handleOptionClick,
+    textStyle,
+    hoverDisabled,
   };
 };
