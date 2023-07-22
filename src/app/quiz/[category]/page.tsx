@@ -98,16 +98,19 @@ export default function QuizPage({ params }: QuizProps) {
                     </Q.Container>
                     {currentQuestionId === selectedCategory.length ? (
                         answered && score >= 50 ? (
-                            <button>Página inicial</button>
+                            <Q.Index title="Categorias" href="/">
+                                <Q.IndexIconOne></Q.IndexIconOne>
+                                <Q.IndexIconTwo></Q.IndexIconTwo>
+                            </Q.Index>
                         ) : answered && score < 50 ? (
-                            <button onClick={handleRestart}>Recomeçar</button>
+                            <Q.Restart title="Reiniciar" onClick={handleRestart}><Q.RestartIconOne></Q.RestartIconOne><Q.RestartIconTwo></Q.RestartIconTwo></Q.Restart>
                         ) : null
                     ) : (
                         answered && (
-                            <Q.NextQuestion onClick={handleNextQuestion}>
-                                <Q.div2></Q.div2>
-                                <Q.div3></Q.div3>
-                            </Q.NextQuestion>
+                            <Q.NextQuestionContainer title="Próxima pergunta" onClick={handleNextQuestion}>
+                                <Q.NextIconOne></Q.NextIconOne>
+                                <Q.NextIconTwo></Q.NextIconTwo>
+                            </Q.NextQuestionContainer>
                         )
                     )}
                 </>

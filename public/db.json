@@ -2,7 +2,7 @@
   "basic": [
     {
       "id": 1,
-      "question": "Qual palavra-chave é utilizada para declarar uma variável no JavaScript? \n Assinale a alternativa incorreta",
+      "question": "Qual palavra-chave é utilizada para declarar uma variável no JavaScript? \n Assinale a alternativa incorreta.",
       "option": {
         "a": "var",
         "b": "const",

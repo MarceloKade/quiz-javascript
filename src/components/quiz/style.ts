@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { styled } from "styled-components";
 
 export const isCorrect = styled.p`
@@ -125,7 +126,7 @@ export const Option = styled.p`
   align-self: center;
 `;
 
-export const NextQuestion = styled.button`
+export const NextQuestionContainer = styled.button`
   width: 56px;
   height: 56px;
   display: flex;
@@ -149,7 +150,7 @@ export const NextQuestion = styled.button`
   }
 `;
 
-export const div2 = styled.div`
+export const NextIconOne = styled.div`
   width: 30px;
   height: 5px;
   margin-top: 15px;
@@ -158,11 +159,95 @@ export const div2 = styled.div`
   transform: rotate(35deg);
   border-radius: 10px;
 `;
-export const div3 = styled.div`
+export const NextIconTwo = styled.div`
   width: 30px;
   height: 5px;
   margin-bottom: 15px;
   transform: rotate(-35deg);
+  background-color: white;
+  border-radius: 10px;
+`;
+
+export const Restart = styled.button`
+  width: 56px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 60px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  background-color: #ff9800;
+  border-radius: 40px;
+  border: none;
+
+  &:hover {
+    background-color: #ffb74d;
+  }
+
+  &:active {
+    background-color: #d87f33;
+  }
+`;
+
+export const RestartIconOne = styled.div`
+  width: 30px;
+  height: 5px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  background-color: white;
+  transform: rotate(-35deg);
+  border-radius: 10px;
+`;
+export const RestartIconTwo = styled.div`
+  width: 30px;
+  height: 5px;
+  margin-bottom: 15px;
+  transform: rotate(35deg);
+  background-color: white;
+  border-radius: 10px;
+`;
+export const Index = styled(Link)`
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 60px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  background-color: #ff9800;
+  border-radius: 40px;
+  border: none;
+
+  &:hover {
+    background-color: #ffb74d;
+  }
+
+  &:active {
+    background-color: #d87f33;
+  }
+`;
+
+export const IndexIconOne = styled.div`
+  width: 5px;
+  height: 30px;
+  margin-top: 6px;
+  margin-left: 15px;
+  margin-right: 10px;
+  background-color: white;
+  transform: rotate(-35deg);
+  border-radius: 10px;
+`;
+export const IndexIconTwo = styled.div`
+  width: 5px;
+  height: 30px;
+  margin-top: 6px;
+  margin-right: 15px;
+  transform: rotate(35deg);
   background-color: white;
   border-radius: 10px;
 `;
