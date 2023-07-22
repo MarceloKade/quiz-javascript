@@ -5,7 +5,7 @@ import './globals.css'
 import { Roboto } from 'next/font/google'
 import ToggleColorButton from '@/components/toggleColorButton/ToggleColorButton'
 
-const roboto = Roboto({ subsets: ['latin'], weight: "400", variable: '--font-roboto' })
+const roboto = Roboto({ subsets: ['latin'], weight: "400" })
 
 export const metadata = {
   title: 'Quiz JavaScript',
