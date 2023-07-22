@@ -1,10 +1,9 @@
 'use client'
-'use client'
 import { useQuizLogic } from '@/components/quiz/QuizLogic';
+import * as Q from '@/components/quiz/style';
 import { QuizProps } from '@/components/quiz/type';
-import React from 'react';
 
-const QuizPage: React.FC<QuizProps> = ({ params }) => {
+export default function QuizPage({ params }: QuizProps) {
     const {
         selectedCategory,
         currentQuestionId,
@@ -13,38 +12,59 @@ const QuizPage: React.FC<QuizProps> = ({ params }) => {
         answered,
         handleNextQuestion,
         handleOptionClick,
+        textStyle,
+        hoverDisabled,
     } = useQuizLogic({ params });
 
     return (
-        <div>
+        <>
             {selectedCategory ? (
                 <>
-                    <ul>
+                    {isCorrect && <Q.isCorrect>Parabéns! Você acertou!</Q.isCorrect>}
+                    {isWrong && <Q.isWrong>Ops! Você errou!</Q.isWrong>}
+                    <Q.Container style={textStyle}>
                         {selectedCategory.map((question) => (
-                            <li key={question.id} style={{ display: question.id === currentQuestionId ? 'block' : 'none' }}>
-                                <div>
-                                    <p>{question.id}</p> <p>{question.question}</p>
-                                </div>
-                                <ul>
-                                    <li onClick={() => handleOptionClick('a', question.correct)}>{`a) ${question.option.a}`}</li>
-                                    <li onClick={() => handleOptionClick('b', question.correct)}>{`b) ${question.option.b}`}</li>
-                                    <li onClick={() => handleOptionClick('c', question.correct)}>{`c) ${question.option.c}`}</li>
-                                    <li onClick={() => handleOptionClick('d', question.correct)}>{`d) ${question.option.d}`}</li>
-                                </ul>
-                            </li>
+                            <div key={question.id} style={{ display: question.id === currentQuestionId ? 'block' : 'none' }}>
+                                <Q.QuestionContainer>
+                                    <Q.QuestionText>{`${question.id}. ${question.question}`}</Q.QuestionText>
+                                </Q.QuestionContainer>
+                                <Q.OptionList>
+                                    <Q.OptionContainer
+                                        onClick={() => handleOptionClick("a", question.correct)}
+                                        isDisabled={hoverDisabled}
+                                    >
+                                        <Q.Option>a</Q.Option>
+                                        <Q.OptionItem>{question.option.a}</Q.OptionItem>
+                                    </Q.OptionContainer>
+                                    <Q.OptionContainer
+                                        onClick={() => handleOptionClick('b', question.correct)}
+                                        isDisabled={hoverDisabled}>
+                                        <Q.Option>b</Q.Option>
+                                        <Q.OptionItem>{question.option.b}</Q.OptionItem>
+                                    </Q.OptionContainer>
+                                    <Q.OptionContainer
+                                        onClick={() => handleOptionClick('c', question.correct)}
+                                        isDisabled={hoverDisabled}>
+                                        <Q.Option>c</Q.Option>
+                                        <Q.OptionItem>{question.option.c}</Q.OptionItem>
+                                    </Q.OptionContainer>
+                                    <Q.OptionContainer
+                                        onClick={() => handleOptionClick('d', question.correct)}
+                                        isDisabled={hoverDisabled}>
+                                        <Q.Option>d</Q.Option>
+                                        <Q.OptionItem>{question.option.d}</Q.OptionItem>
+                                    </Q.OptionContainer>
+                                </Q.OptionList>
+                            </div>
                         ))}
-                    </ul>
-                    {isCorrect && <p>Parabéns! Você acertou!</p>}
-                    {isWrong && <p>Ops! Você errou! Tente novamente.</p>}
+                    </Q.Container>
                     {answered && (
-                        <button onClick={handleNextQuestion}>Next Question</button>
+                        <Q.NextQuestion onClick={handleNextQuestion}><Q.div1><Q.div2></Q.div2><Q.div3></Q.div3></Q.div1></Q.NextQuestion>
                     )}
                 </>
             ) : (
                 <p>Carregando...</p>
             )}
-        </div>
+        </>
     );
 };
-
-export default QuizPage;
