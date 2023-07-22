@@ -41,6 +41,8 @@ export const OptionList = styled.ul`
 
 export const OptionContainer = styled.div<{
   isDisabled?: boolean;
+  isAnsweredCorrectly?: boolean;
+  isAnsweredWrong?: boolean;
 }>`
   display: flex;
   user-select: none;
@@ -51,11 +53,12 @@ export const OptionContainer = styled.div<{
   height: 50px;
   padding-left: 4px;
   transition: background-color 0.2s ease-in-out;
-  background-color: "transparent";
+  background-color: ${({ isAnsweredCorrectly, isAnsweredWrong }) =>
+    isAnsweredCorrectly ? "green" : isAnsweredWrong ? "red" : "transparent"};
 
   &:hover {
     background-color: ${({ isDisabled }) =>
-      isDisabled ? "transparent" : "rgba(0, 116, 217, 0.6)"};
+      isDisabled ? "none" : "rgba(0, 116, 217, 0.6)"};
   }
 `;
 
@@ -75,10 +78,11 @@ export const Option = styled.p`
   align-self: center;
 `;
 
-export const NextQuestion = styled.div`
+export const NextQuestion = styled.button`
   width: 56px;
   height: 56px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-left: 60px;
@@ -87,6 +91,7 @@ export const NextQuestion = styled.div`
   cursor: pointer;
   background-color: #ff9800;
   border-radius: 40px;
+  border: none;
 
   &:hover {
     background-color: #ffb74d;
@@ -97,7 +102,6 @@ export const NextQuestion = styled.div`
   }
 `;
 
-export const div1 = styled.div``;
 export const div2 = styled.div`
   width: 30px;
   height: 5px;

@@ -6,12 +6,13 @@ import { useToggleColor } from "@/hooks/context/useToggleColor";
 
 export const useQuizLogic = ({ params }: QuizProps) => {
   const { category } = params;
-  const [selectedCategory, setSelectedCategory] = useState<Question[] | null>(
-    null
-  );
+  const [selectedCategory, setSelectedCategory] = useState<Question[]>([]);
   const [currentQuestionId, setCurrentQuestionId] = useState<number>(1);
-  const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-  const [isWrong, setIsWrong] = useState<boolean | null>(null);
+  const [isCorrect, setIsCorrect] = useState<boolean>(false);
+  const [isWrong, setIsWrong] = useState<boolean>(false);
+  const [selectedOption, setSelectedOption] = useState<string>("");
+  const [score, setScore] = useState<number>(0);
+  const [scoreMessage, setScoreMessage] = useState("");
   const [answered, setAnswered] = useState<boolean>(false);
   const [hoverDisabled, setHoverDisabled] = useState<boolean>(false);
 
@@ -22,7 +23,7 @@ export const useQuizLogic = ({ params }: QuizProps) => {
         const selectedCategoryData: Category | undefined =
           quizData[category as keyof QuizData];
         setSelectedCategory(
-          Array.isArray(selectedCategoryData) ? selectedCategoryData : null
+          Array.isArray(selectedCategoryData) ? selectedCategoryData : []
         );
       } catch (error) {
         console.error("Erro ao obter os dados do quiz:", error);
@@ -36,18 +37,33 @@ export const useQuizLogic = ({ params }: QuizProps) => {
     setCurrentQuestionId((prevId) =>
       prevId < (selectedCategory?.length ?? 0) ? prevId + 1 : prevId
     );
-    setIsCorrect(null);
-    setIsWrong(null);
+    setIsCorrect(false);
+    setIsWrong(false);
     setAnswered(false);
+    setHoverDisabled(false);
+  };
+
+  const handleRestart = () => {
+    setCurrentQuestionId(1);
+    setIsCorrect(false);
+    setIsWrong(false);
+    setAnswered(false);
+    setHoverDisabled(false);
+    setScore(0);
   };
 
   const handleOptionClick = (selectedOption: string, correctOption: string) => {
     if (!answered) {
       setHoverDisabled(true);
+      setSelectedOption(selectedOption);
       if (selectedOption === correctOption) {
         setIsCorrect(true);
+        setScore((prevScore) => prevScore + 10);
+        setScoreMessage("+10");
       } else {
         setIsWrong(true);
+        setScore((prevScore) => prevScore - 5);
+        setScoreMessage("-5");
       }
       setAnswered(true);
     }
@@ -59,14 +75,18 @@ export const useQuizLogic = ({ params }: QuizProps) => {
   };
 
   return {
+    handleNextQuestion,
+    handleOptionClick,
+    handleRestart,
     selectedCategory,
     currentQuestionId,
     isCorrect,
     isWrong,
+    selectedOption,
     answered,
-    handleNextQuestion,
-    handleOptionClick,
     textStyle,
     hoverDisabled,
+    score,
+    scoreMessage,
   };
 };

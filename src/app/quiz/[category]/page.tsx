@@ -5,23 +5,30 @@ import { QuizProps } from '@/components/quiz/type';
 
 export default function QuizPage({ params }: QuizProps) {
     const {
+        handleNextQuestion,
+        handleOptionClick,
+        handleRestart,
         selectedCategory,
         currentQuestionId,
         isCorrect,
         isWrong,
         answered,
-        handleNextQuestion,
-        handleOptionClick,
         textStyle,
         hoverDisabled,
+        score,
+        scoreMessage,
+        selectedOption
     } = useQuizLogic({ params });
 
     return (
         <>
-            {selectedCategory ? (
+            {selectedCategory && (
                 <>
                     {isCorrect && <Q.isCorrect>Parabéns! Você acertou!</Q.isCorrect>}
                     {isWrong && <Q.isWrong>Ops! Você errou!</Q.isWrong>}
+                    <div>
+                        <p>{`Score: ${score}`}</p> <p>{scoreMessage}</p>
+                    </div>
                     <Q.Container style={textStyle}>
                         {selectedCategory.map((question) => (
                             <div key={question.id} style={{ display: question.id === currentQuestionId ? 'block' : 'none' }}>
@@ -32,25 +39,36 @@ export default function QuizPage({ params }: QuizProps) {
                                     <Q.OptionContainer
                                         onClick={() => handleOptionClick("a", question.correct)}
                                         isDisabled={hoverDisabled}
+                                        isAnsweredCorrectly={isCorrect && question.correct === "a"}
+                                        isAnsweredWrong={isWrong && selectedOption === "a"}
                                     >
                                         <Q.Option>a</Q.Option>
                                         <Q.OptionItem>{question.option.a}</Q.OptionItem>
                                     </Q.OptionContainer>
                                     <Q.OptionContainer
                                         onClick={() => handleOptionClick('b', question.correct)}
-                                        isDisabled={hoverDisabled}>
+                                        isDisabled={hoverDisabled}
+                                        isAnsweredCorrectly={isCorrect && question.correct === "b"}
+                                        isAnsweredWrong={isWrong && selectedOption === "b"}
+                                    >
                                         <Q.Option>b</Q.Option>
                                         <Q.OptionItem>{question.option.b}</Q.OptionItem>
                                     </Q.OptionContainer>
                                     <Q.OptionContainer
                                         onClick={() => handleOptionClick('c', question.correct)}
-                                        isDisabled={hoverDisabled}>
+                                        isDisabled={hoverDisabled}
+                                        isAnsweredCorrectly={isCorrect && question.correct === "c"}
+                                        isAnsweredWrong={isWrong && selectedOption === "c"}
+                                    >
                                         <Q.Option>c</Q.Option>
                                         <Q.OptionItem>{question.option.c}</Q.OptionItem>
                                     </Q.OptionContainer>
                                     <Q.OptionContainer
                                         onClick={() => handleOptionClick('d', question.correct)}
-                                        isDisabled={hoverDisabled}>
+                                        isDisabled={hoverDisabled}
+                                        isAnsweredCorrectly={isCorrect && question.correct === "d"}
+                                        isAnsweredWrong={isWrong && selectedOption === "d"}
+                                    >
                                         <Q.Option>d</Q.Option>
                                         <Q.OptionItem>{question.option.d}</Q.OptionItem>
                                     </Q.OptionContainer>
@@ -58,13 +76,22 @@ export default function QuizPage({ params }: QuizProps) {
                             </div>
                         ))}
                     </Q.Container>
-                    {answered && (
-                        <Q.NextQuestion onClick={handleNextQuestion}><Q.div1><Q.div2></Q.div2><Q.div3></Q.div3></Q.div1></Q.NextQuestion>
+                    {currentQuestionId === selectedCategory.length ? (
+                        answered && score >= 50 ? (
+                            <button>Página inicial</button>
+                        ) : answered && score < 50 ? (
+                            <button onClick={handleRestart}>Recomeçar</button>
+                        ) : null
+                    ) : (
+                        answered && (
+                            <Q.NextQuestion onClick={handleNextQuestion}>
+                                <Q.div2></Q.div2>
+                                <Q.div3></Q.div3>
+                            </Q.NextQuestion>
+                        )
                     )}
                 </>
-            ) : (
-                <p>Carregando...</p>
             )}
         </>
     );
-};
+}
