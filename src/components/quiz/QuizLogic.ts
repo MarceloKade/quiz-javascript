@@ -15,6 +15,11 @@ export const useQuizLogic = ({ params }: QuizProps) => {
   const [scoreMessage, setScoreMessage] = useState("");
   const [answered, setAnswered] = useState<boolean>(false);
   const [hoverDisabled, setHoverDisabled] = useState<boolean>(false);
+  const [timeRemaining, setTimeRemaining] = useState<number>(15);
+  const [timeActive, setTimeActive] = useState<boolean>(true);
+  const [showTimeRemaining, setShowTimeRemaining] = useState<boolean>(true);
+  const [timeIsUp, setTimeIsUp] = useState<boolean>(false);
+  const [showScorePoints, setShowScorePoints] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -33,6 +38,43 @@ export const useQuizLogic = ({ params }: QuizProps) => {
     fetchData();
   }, [category]);
 
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+
+    if (
+      timeRemaining > 0 &&
+      timeActive &&
+      currentQuestionId <= selectedCategory.length
+    ) {
+      timer = setTimeout(() => {
+        setTimeRemaining((prevTime) => prevTime - 1);
+      }, 1000);
+    }
+
+    if (timeRemaining === 0) {
+      setScore((prevScore) => prevScore - 5);
+      setAnswered(true);
+      setHoverDisabled(true);
+      setTimeActive(true);
+      setTimeIsUp(true);
+    }
+
+    return () => clearTimeout(timer);
+  }, [timeRemaining, timeActive, currentQuestionId, selectedCategory.length]);
+
+  useEffect(() => {
+    if (scoreMessage || timeIsUp) {
+      // Mostra o Q.ScorePoints por 2 segundos
+      setShowScorePoints(true);
+      const timer = setTimeout(() => {
+        setShowScorePoints(false);
+      }, 2000);
+
+      // Limpa o timer quando o componente é desmontado ou o scoreMessage é alterado
+      return () => clearTimeout(timer);
+    }
+  }, [scoreMessage, timeIsUp]);
+
   const handleNextQuestion = () => {
     setCurrentQuestionId((prevId) =>
       prevId < (selectedCategory?.length ?? 0) ? prevId + 1 : prevId
@@ -41,6 +83,10 @@ export const useQuizLogic = ({ params }: QuizProps) => {
     setIsWrong(false);
     setAnswered(false);
     setHoverDisabled(false);
+    setTimeRemaining(15);
+    setTimeActive(true);
+    setShowTimeRemaining(true);
+    setTimeIsUp(false);
   };
 
   const handleRestart = () => {
@@ -50,6 +96,7 @@ export const useQuizLogic = ({ params }: QuizProps) => {
     setAnswered(false);
     setHoverDisabled(false);
     setScore(0);
+    setTimeRemaining(15);
   };
 
   const handleOptionClick = (selectedOption: string, correctOption: string) => {
@@ -66,6 +113,8 @@ export const useQuizLogic = ({ params }: QuizProps) => {
         setScoreMessage("-5");
       }
       setAnswered(true);
+      setTimeActive(false);
+      setShowTimeRemaining(false);
     }
   };
 
@@ -88,5 +137,10 @@ export const useQuizLogic = ({ params }: QuizProps) => {
     hoverDisabled,
     score,
     scoreMessage,
+    timeRemaining,
+    showTimeRemaining,
+    timeActive,
+    timeIsUp,
+    showScorePoints,
   };
 };

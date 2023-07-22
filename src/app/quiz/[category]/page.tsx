@@ -17,18 +17,38 @@ export default function QuizPage({ params }: QuizProps) {
         hoverDisabled,
         score,
         scoreMessage,
-        selectedOption
+        selectedOption,
+        timeRemaining,
+        showTimeRemaining,
+        timeIsUp,
+        showScorePoints
     } = useQuizLogic({ params });
 
     return (
         <>
             {selectedCategory && (
                 <>
+                    {showTimeRemaining && (
+                        <Q.TimeExpired>
+                            {answered || timeRemaining === 0
+                                ? "Tempo esgotado."
+                                : `${timeRemaining}`}
+                        </Q.TimeExpired>
+                    )}
                     {isCorrect && <Q.isCorrect>Parabéns! Você acertou!</Q.isCorrect>}
                     {isWrong && <Q.isWrong>Ops! Você errou!</Q.isWrong>}
-                    <div>
-                        <p>{`Score: ${score}`}</p> <p>{scoreMessage}</p>
-                    </div>
+                    <Q.ScoreContainer>
+                        <Q.ScoreTotal>{score}</Q.ScoreTotal>
+                        <Q.ScorePoints
+                            isAnsweredCorrectly={isCorrect}
+                            isAnsweredWrong={isWrong}
+                            timeIsUp={timeIsUp}
+                            opacity={showScorePoints ? 1 : 0} // Defina a opacidade com base no estado showScorePoints
+                        >
+                            {scoreMessage || (timeIsUp && "-5")}
+                        </Q.ScorePoints>
+                    </Q.ScoreContainer>
+
                     <Q.Container style={textStyle}>
                         {selectedCategory.map((question) => (
                             <div key={question.id} style={{ display: question.id === currentQuestionId ? 'block' : 'none' }}>

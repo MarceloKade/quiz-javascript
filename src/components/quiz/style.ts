@@ -14,9 +14,56 @@ export const isWrong = styled.p`
   font-size: 48px;
   color: #ff1744;
 `;
+
+export const TimeExpired = styled.p`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 60px;
+  color: #ff1744;
+`;
 export const Container = styled.div`
   padding-left: 60px;
   margin-top: 96px;
+`;
+
+export const ScoreContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 60px;
+`;
+
+export const ScoreTotal = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background-color: green;
+  border: solid 2px;
+  border-radius: 40px;
+  font-size: 40px;
+`;
+
+export const ScorePoints = styled.p<{
+  isAnsweredCorrectly?: boolean;
+  isAnsweredWrong?: boolean;
+  timeIsUp?: boolean;
+  opacity?: number;
+}>`
+  color: ${({ isAnsweredCorrectly, isAnsweredWrong, timeIsUp }) =>
+    timeIsUp
+      ? "red"
+      : isAnsweredCorrectly
+      ? "green"
+      : isAnsweredWrong
+      ? "red"
+      : "transparent"};
+  font-size: 30px;
+  opacity: ${({ opacity }) =>
+    opacity !== undefined ? opacity : 1}; // Defina a opacidade
+  transition: opacity 0.5s; // Adicione a transição suave para a propriedade opacity
 `;
 
 export const QuestionContainer = styled.ul`
