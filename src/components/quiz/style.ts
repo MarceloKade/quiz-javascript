@@ -3,29 +3,28 @@ import { styled } from "styled-components";
 
 export const isCorrect = styled.p`
   position: absolute;
+  text-align: center;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 48px;
+  font-size: clamp(24px, 4vw, 60px);
   color: #2ecc71;
 `;
 export const isWrong = styled.p`
   position: absolute;
+  text-align: center;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 48px;
+  font-size: clamp(24px, 4vw, 60px);
   color: #ff1744;
 `;
 
 export const TimeExpired = styled.p`
   position: absolute;
+  text-align: center;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 60px;
+  font-size: clamp(24px, 4vw, 60px);
   color: #ff1744;
-`;
-export const Container = styled.div`
-  padding-left: 60px;
-  margin-top: 96px;
 `;
 
 export const ScoreContainer = styled.div`
@@ -33,6 +32,12 @@ export const ScoreContainer = styled.div`
   align-items: center;
   gap: 10px;
   margin-left: 60px;
+  margin-top: 5rem;
+
+  @media (max-width: 640px) {
+    justify-content: center;
+    margin-left: 35px;
+  }
 `;
 
 export const ScoreTotal = styled.p`
@@ -62,15 +67,24 @@ export const ScorePoints = styled.p<{
       ? "red"
       : "transparent"};
   font-size: 30px;
-  opacity: ${({ opacity }) =>
-    opacity !== undefined ? opacity : 1}; // Defina a opacidade
-  transition: opacity 0.5s; // Adicione a transição suave para a propriedade opacity
+  opacity: ${({ opacity }) => (opacity !== undefined ? opacity : 1)};
+  transition: opacity 0.5s;
+`;
+
+export const Container = styled.div`
+  padding-inline: 60px;
+  margin-top: 40px;
+
+  @media (max-width: 640px) {
+    padding-inline: 20px;
+  }
 `;
 
 export const QuestionContainer = styled.ul`
   display: flex;
+  align-items: center;
   gap: 8px;
-  font-size: 48px;
+  font-size: clamp(12px, 4vw, 48px);
 `;
 
 export const QuestionText = styled.p`
@@ -83,7 +97,7 @@ export const OptionList = styled.ul`
   flex-direction: column;
   margin-top: 96px;
   gap: 40px;
-  font-size: 36px;
+  font-size: clamp(12px, 4vw, 36px);
   list-style: none;
 `;
 
@@ -94,11 +108,11 @@ export const OptionContainer = styled.div<{
 }>`
   display: flex;
   user-select: none;
-  gap: 36px;
+  gap: 1em;
   font-weight: bold;
   cursor: pointer;
   border-radius: 30px;
-  height: 50px;
+  height: 1.4em;
   padding-left: 4px;
   transition: background-color 0.2s ease-in-out;
   background-color: ${({ isAnsweredCorrectly, isAnsweredWrong }) =>
@@ -119,8 +133,9 @@ export const Option = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 1.2em;
+  height: 1.2em;
+  font-size: clamp(12px, 5vw, 40px);
   background-color: #ff9800;
   border-radius: 30px;
   align-self: center;
@@ -141,6 +156,14 @@ export const NextQuestionContainer = styled.button`
   border-radius: 40px;
   border: none;
 
+  @media (max-width: 640px) {
+    width: 28px;
+    height: 28px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
   &:hover {
     background-color: #ffb74d;
   }
@@ -158,7 +181,15 @@ export const NextIconOne = styled.div`
   background-color: white;
   transform: rotate(35deg);
   border-radius: 10px;
+
+  @media (max-width: 640px) {
+    width: 15px;
+    height: 2.5px;
+    margin-top: 7.5px;
+    margin-bottom: 5px;
+  }
 `;
+
 export const NextIconTwo = styled.div`
   width: 30px;
   height: 5px;
@@ -166,6 +197,12 @@ export const NextIconTwo = styled.div`
   transform: rotate(-35deg);
   background-color: white;
   border-radius: 10px;
+
+  @media (max-width: 640px) {
+    width: 15px;
+    height: 2.5px;
+    margin-bottom: 7.5px;
+  }
 `;
 
 export const Restart = styled.button`
@@ -182,6 +219,14 @@ export const Restart = styled.button`
   background-color: #ff9800;
   border-radius: 40px;
   border: none;
+
+  @media (max-width: 640px) {
+    width: 28px;
+    height: 28px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
   &:hover {
     background-color: #ffb74d;
@@ -200,7 +245,16 @@ export const RestartIconOne = styled.div`
   background-color: white;
   transform: rotate(-35deg);
   border-radius: 10px;
+
+  @media (max-width: 640px) {
+    width: 15px;
+    height: 2.5px;
+    margin-top: 7.5px;
+    margin-bottom: 5px;
+    transform: rotate(-35deg);
+  }
 `;
+
 export const RestartIconTwo = styled.div`
   width: 30px;
   height: 5px;
@@ -208,7 +262,15 @@ export const RestartIconTwo = styled.div`
   transform: rotate(35deg);
   background-color: white;
   border-radius: 10px;
+
+  @media (max-width: 640px) {
+    width: 15px;
+    height: 2.5px;
+    margin-bottom: 7.5px;
+    transform: rotate(35deg);
+  }
 `;
+
 export const Index = styled(Link)`
   width: 56px;
   height: 56px;
@@ -222,6 +284,14 @@ export const Index = styled(Link)`
   background-color: #ff9800;
   border-radius: 40px;
   border: none;
+
+  @media (max-width: 640px) {
+    width: 28px;
+    height: 28px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
   &:hover {
     background-color: #ffb74d;
@@ -241,7 +311,17 @@ export const IndexIconOne = styled.div`
   background-color: white;
   transform: rotate(-35deg);
   border-radius: 10px;
+
+  @media (max-width: 640px) {
+    width: 2.5px;
+    height: 15px;
+    margin-top: 3px;
+    margin-left: 7.5px;
+    margin-right: 5px;
+    transform: rotate(-35deg);
+  }
 `;
+
 export const IndexIconTwo = styled.div`
   width: 5px;
   height: 30px;
@@ -250,4 +330,12 @@ export const IndexIconTwo = styled.div`
   transform: rotate(35deg);
   background-color: white;
   border-radius: 10px;
+
+  @media (max-width: 640px) {
+    width: 2.5px;
+    height: 15px;
+    margin-top: 3px;
+    margin-right: 7.5px;
+    transform: rotate(35deg);
+  }
 `;

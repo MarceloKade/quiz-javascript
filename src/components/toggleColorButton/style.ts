@@ -1,11 +1,11 @@
-import { styled, createGlobalStyle  } from "styled-components";
+import { styled, createGlobalStyle } from "styled-components";
 export const ContainerButton = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  width: 102px;
-  height: 46px;
+  width: 6.375em;
+  height: 2.875em;
   background-color: white;
   border-radius: 30px;
   margin-top: 38px;

@@ -15,16 +15,21 @@ export const ContainerButtonBasic = styled.div`
   align-items: center;
   width: 714px;
   height: 146.67px;
-  background-color: #FF9800;
+  background-color: #ff9800;
   border-radius: 100px;
   margin-bottom: 47px;
   cursor: pointer;
 
   &:hover {
-    background-color: #FFB74D;
+    background-color: #ffb74d;
   }
   &:active {
-    background-color: #D87F33;
+    background-color: #d87f33;
+  }
+
+  @media (max-width: 640px) {
+    width: 314px;
+    height: 100.67px;
   }
 `;
 
@@ -35,16 +40,20 @@ export const ContainerButtonIntermediary = styled.div`
   align-items: center;
   width: 714px;
   height: 146.67px;
-  background-color: #2196F3;
+  background-color: #2196f3;
   border-radius: 100px;
   margin-bottom: 47px;
   cursor: pointer;
 
-    &:hover {
-    background-color: #64B5F6;
+  &:hover {
+    background-color: #64b5f6;
   }
   &:active {
-    background-color: #1369C3;
+    background-color: #1369c3;
+  }
+  @media (max-width: 640px) {
+    width: 314px;
+    height: 100.67px;
   }
 `;
 
@@ -55,14 +64,18 @@ export const ContainerButtonAdvanced = styled.div`
   align-items: center;
   width: 714px;
   height: 146.67px;
-  background-color: #FF1744;
+  background-color: #ff1744;
   border-radius: 100px;
   cursor: pointer;
 
   &:hover {
-    background-color: #FF5C8D;
+    background-color: #ff5c8d;
   }
   &:active {
-    background-color: #D33658;
+    background-color: #d33658;
+  }
+  @media (max-width: 640px) {
+    width: 314px;
+    height: 100.67px;
   }
 `;
