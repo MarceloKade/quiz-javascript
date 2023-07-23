@@ -1,8 +1,8 @@
 import { useToggleColor } from "@/hooks/context/useToggleColor";
-import * as B from "./style";
-import * as T from "../text/style";
 import Link from "next/link";
 import { ButtonProps } from "./type";
+import { ContainerButtonAdvanced, ContainerButtonBasic, ContainerButtonIntermediary } from "./style";
+import * as T from "../text/style";
 
 export function ButtonCategory({ text, category, type }: ButtonProps) {
     const { theme } = useToggleColor();
@@ -11,17 +11,15 @@ export function ButtonCategory({ text, category, type }: ButtonProps) {
         color: theme.backgroundColor === "white" ? "black" : "white",
     };
 
-    // Escolhe o estilo do botão com base na prop "type"
     let ContainerButtonStyle;
     if (type === "basic") {
-        ContainerButtonStyle = B.ContainerButtonBasic;
+        ContainerButtonStyle = ContainerButtonBasic;
     } else if (type === "intermediary") {
-        ContainerButtonStyle = B.ContainerButtonIntermediary;
+        ContainerButtonStyle = ContainerButtonIntermediary;
     } else if (type === "advanced") {
-        ContainerButtonStyle = B.ContainerButtonAdvanced;
+        ContainerButtonStyle = ContainerButtonAdvanced;
     } else {
-        // Caso a prop "type" não seja reconhecida, use o estilo padrão
-        ContainerButtonStyle = B.ContainerButtonBasic;
+        ContainerButtonStyle = ContainerButtonBasic;
     }
 
     return (

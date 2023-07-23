@@ -1,5 +1,4 @@
-import Container from '@/components/Container';
-import ToggleColorButton from '@/components/toggleColorButton/ToggleColorButton';
+import Container from "@/components/Container";
 
 export default function Home() {
   return (
