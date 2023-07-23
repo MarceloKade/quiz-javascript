@@ -3,7 +3,7 @@ import { ButtonCategory } from './Button';
 import { ContainerButton } from './style';
 import Text from '../text/Text';
 
-export default function Container() {
+export default function ContainerPage() {
     return (
         <>
             <ContainerButton>
