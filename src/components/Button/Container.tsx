@@ -1,7 +1,7 @@
 'use client'
-import { ButtonCategory } from './button/Button';
-import { ContainerButton } from './button/style';
-import Text from './text/Text';
+import { ButtonCategory } from './Button';
+import { ContainerButton } from './style';
+import Text from '../text/Text';
 
 export default function Container() {
     return (
