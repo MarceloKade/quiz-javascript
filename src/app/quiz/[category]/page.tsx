@@ -56,42 +56,18 @@ export default function QuizPage({ params }: QuizProps) {
                                     <Q.QuestionText>{`${question.id}. ${question.question}`}</Q.QuestionText>
                                 </Q.QuestionContainer>
                                 <Q.OptionList>
-                                    <Q.OptionContainer
-                                        onClick={() => handleOptionClick("a", question.correct)}
-                                        isDisabled={hoverDisabled}
-                                        isAnsweredCorrectly={isCorrect && question.correct === "a"}
-                                        isAnsweredWrong={isWrong && selectedOption === "a"}
-                                    >
-                                        <Q.Option>a</Q.Option>
-                                        <Q.OptionItem>{question.option.a}</Q.OptionItem>
-                                    </Q.OptionContainer>
-                                    <Q.OptionContainer
-                                        onClick={() => handleOptionClick('b', question.correct)}
-                                        isDisabled={hoverDisabled}
-                                        isAnsweredCorrectly={isCorrect && question.correct === "b"}
-                                        isAnsweredWrong={isWrong && selectedOption === "b"}
-                                    >
-                                        <Q.Option>b</Q.Option>
-                                        <Q.OptionItem>{question.option.b}</Q.OptionItem>
-                                    </Q.OptionContainer>
-                                    <Q.OptionContainer
-                                        onClick={() => handleOptionClick('c', question.correct)}
-                                        isDisabled={hoverDisabled}
-                                        isAnsweredCorrectly={isCorrect && question.correct === "c"}
-                                        isAnsweredWrong={isWrong && selectedOption === "c"}
-                                    >
-                                        <Q.Option>c</Q.Option>
-                                        <Q.OptionItem>{question.option.c}</Q.OptionItem>
-                                    </Q.OptionContainer>
-                                    <Q.OptionContainer
-                                        onClick={() => handleOptionClick('d', question.correct)}
-                                        isDisabled={hoverDisabled}
-                                        isAnsweredCorrectly={isCorrect && question.correct === "d"}
-                                        isAnsweredWrong={isWrong && selectedOption === "d"}
-                                    >
-                                        <Q.Option>d</Q.Option>
-                                        <Q.OptionItem>{question.option.d}</Q.OptionItem>
-                                    </Q.OptionContainer>
+                                    {Object.entries(question.option).map(([optionKey, optionText]) => (
+                                        <Q.OptionContainer
+                                            key={optionKey}
+                                            onClick={() => handleOptionClick(optionKey, question.correct)}
+                                            isDisabled={hoverDisabled}
+                                            isAnsweredCorrectly={isCorrect && question.correct === optionKey}
+                                            isAnsweredWrong={isWrong && selectedOption === optionKey}
+                                        >
+                                            <Q.Option>{optionKey}</Q.Option>
+                                            <Q.OptionItem>{optionText}</Q.OptionItem>
+                                        </Q.OptionContainer>
+                                    ))}
                                 </Q.OptionList>
                             </div>
                         ))}
