@@ -3,4 +3,5 @@ import { TextProps } from "../text/type";
 
 export interface ButtonProps extends TextProps {
   category: keyof QuizData;
+  type: "basic" | "intermediary" | "advanced";
 }

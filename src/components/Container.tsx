@@ -1,5 +1,5 @@
 'use client'
-import { ButtonAdvanced, ButtonBasic, ButtonIntermediary } from './button/Button';
+import { ButtonCategory } from './button/Button';
 import * as C from './button/style';
 import Text from './text/Text';
 
@@ -8,9 +8,9 @@ export default function Container() {
         <>
             <C.Container>
                 <Text />
-                <ButtonBasic text="Básico" category="basic" />
-                <ButtonIntermediary text="Intermediário" category="intermediary" />
-                <ButtonAdvanced text="Avançado" category="advanced" />
+                <ButtonCategory text="Básico" category="basic" type={'basic'} />
+                <ButtonCategory text="Intermediário" category="intermediary" type={'intermediary'} />
+                <ButtonCategory text="Avançado" category="advanced" type={'advanced'} />
             </C.Container>
         </>
     );
