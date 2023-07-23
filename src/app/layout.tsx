@@ -18,11 +18,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={`${roboto.className} font-sans`}>
-        <AppWrapper>
-          <StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <AppWrapper>
             {children}
-          </StyledComponentsRegistry>
-        </AppWrapper>
+          </AppWrapper>
+        </StyledComponentsRegistry>
       </body>
     </html>
   )
