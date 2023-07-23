@@ -1,7 +1,7 @@
 'use client'
-import { useQuizLogic } from '@/components/quiz/QuizLogic';
-import * as Q from '@/components/quiz/style';
-import { QuizProps } from '@/components/quiz/type';
+import { useQuizLogic } from '@/app/components/quiz/QuizLogic';
+import * as Q from '@/app/components/quiz/style';
+import { QuizProps } from '@/app/components/quiz/type';
 
 export default function QuizPage({ params }: QuizProps) {
     const {
